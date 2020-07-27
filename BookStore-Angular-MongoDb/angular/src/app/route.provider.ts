@@ -16,6 +16,19 @@ function configureRoutes(routes: RoutesService) {
         layout: eLayoutType.application,
       },
       {
+        path: '/employee-store',
+        name: '::Menu:EmployeeStore',
+        iconClass: 'fas fa-book',
+        order: 2,
+        layout: eLayoutType.application,
+      },
+      {
+        path: '/employees',
+        name: '::Menu:Employee',
+        parentName: '::Menu:EmployeeStore',
+        layout: eLayoutType.application
+      },
+      {
         path: '/book-store',
         name: '::Menu:BookStore',
         iconClass: 'fas fa-book',
@@ -28,7 +41,7 @@ function configureRoutes(routes: RoutesService) {
         parentName: '::Menu:BookStore',
         layout: eLayoutType.application,
         requiredPolicy: 'BookStore.Books',
-      },
+      }
     ]);
   };
 }
